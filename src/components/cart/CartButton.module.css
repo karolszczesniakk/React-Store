@@ -1,0 +1,25 @@
+.button {
+  height: 2.5rem;
+  font-size: 1rem;
+  background-color: #222831;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #DDDDDD;
+  border-radius: 5px;
+
+
+
+}
+
+.button:hover,
+.button:active {
+  background-color: #4d6994;
+
+}
+
+.button span {
+  margin: 0 0.5rem;
+  color: #DDDDDD;
+
+}
+

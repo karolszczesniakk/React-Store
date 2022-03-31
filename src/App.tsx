@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import Home from './pages/Home';
+import ItemDetails from './pages/ItemDetails';
+import Shop from './pages/Shop';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:itemId" element={<ItemDetails data="czesc" />} />
+        <Route
+          path="/about"
+          element={<h1 className="centered"> about </h1>}
+        />
+        <Route
+          path="/contact"
+          element={<h1 className="centered"> contact </h1>}
+        />
+        <Route path="/cart" element={<h1 className="centered"> cart </h1>} />
+        <Route path="/*" element={<h1 className="centered"> not found </h1>} />
+      </Routes>
+    </Layout>
   );
 }
 
