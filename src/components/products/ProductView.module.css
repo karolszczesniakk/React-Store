@@ -1,0 +1,9 @@
+.product-view{
+  margin: 3rem auto;
+  width: 80%;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+
+}

@@ -1,22 +1,18 @@
 import React from "react";
-import ItemsCointainer from "../items/ItemsContainer";
+import ProductsContainer from "../products/ProductsContainer";
 import DUMMY_DATA from "../../dummy-data";
+
+import classes from "./Products.module.css";
 
 const Shop: React.FC = () => {
   return (
-    <>
-      <div className="centered">
-        <p>
-          <h1>Products</h1>
-        </p>
-        <span>Sportowe</span>
-        <span> Kurwa szkolne nie wiem </span>
-        <span>Link</span>
-      </div>
-      <div className="centered">
-        <ItemsCointainer items={DUMMY_DATA} />
-      </div>
-    </>
+    <div className={classes.products}>
+      <h1>Products</h1>
+      <span>Sportowe</span>
+      <span> Kurwa szkolne nie wiem </span>
+      <span>Link</span>
+      <ProductsContainer items={DUMMY_DATA} />
+    </div>
   );
 };
 

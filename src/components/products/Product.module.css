@@ -1,0 +1,31 @@
+.item {
+  width: 14rem;
+}
+
+.item p{
+  text-align: left;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.item img{
+  width: 100%;
+  height: 15rem;
+}
+
+.item-image{
+  overflow: hidden;
+}
+
+.item-image img{
+  width: 100%;
+  height: 15rem;
+  transition: 0.3s;
+}
+
+.item-image img:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+}
