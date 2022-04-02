@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
+import Button from "../UI/Button";
 
 const CartButton: React.FC = () => {
 
   const cartQuantity = useSelector((state: any) => state.cart.totalQuantity)
   console.log(cartQuantity);
   return (
-    <button className="btn">
+    <Button>
       <span>Cart</span>
-      <span> ({cartQuantity})</span>
-    </button>
+      <span>({cartQuantity})</span>
+    </Button>
   );
 };
 

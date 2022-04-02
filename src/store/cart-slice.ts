@@ -1,13 +1,8 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Item from "../components/models/item";
+import { Item } from "../components/models/Item";
+import { CartItem } from "../components/models/CartItem";
 
-type CartItem = {
-  itemDetails: Item;
-  quantity: number;
-  totalPrice: number;
-};
-
-type CartState = {
+interface CartState {
   cartItems: CartItem[],
   totalQuantity: number,
 };

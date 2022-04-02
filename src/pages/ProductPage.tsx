@@ -10,17 +10,18 @@ const ProductPage: React.FC = () => {
 
   const { itemId } = params;
 
-  const item = DUMMY_DATA.find((item) => item.id === itemId);
+  //check if item of id itemId exists in database
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+ /*
   useEffect(() => {
     if (item === undefined) {
       navigate("/not-found", { replace: true });
     }
-  }, [item, navigate]);
+  }, [item, navigate]);\
+  */
 
   return  <ProductView />
 

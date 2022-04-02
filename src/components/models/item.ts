@@ -1,8 +1,12 @@
-type Item = {
-  id: string;
+export interface Item {
+  id: number;
+  title: string;
   price: number;
-  name: string;
-  imgUrl: string;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
 };
-
-export default Item;

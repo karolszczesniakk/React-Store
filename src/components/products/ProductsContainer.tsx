@@ -1,5 +1,5 @@
 import Product from "./Product";
-import Item from "../models/item";
+import { Item } from "../models/Item";
 
 import classes from "./ProductsContainer.module.css";
 

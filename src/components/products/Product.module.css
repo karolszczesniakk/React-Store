@@ -1,5 +1,5 @@
 .item {
-  width: 14rem;
+  width: 15rem;
 }
 
 .item p{
@@ -8,11 +8,6 @@
 
 .price {
   font-size: 1.5rem;
-}
-
-.item img{
-  width: 100%;
-  height: 15rem;
 }
 
 .item-image{
@@ -26,6 +21,6 @@
 }
 
 .item-image img:hover{
-  transform: scale(1.5);
+  transform: scale(1.15);
   cursor: pointer;
 }
