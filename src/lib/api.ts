@@ -8,11 +8,11 @@ export async function getProducts(category = '') {
   if (!response.ok) {
     throw new Error(data.message || "Could not fetch products");
   }
-
+  
   return data;
 }
 
-export async function getSingleProduct(id: number) {
+export async function getSingleProduct(id: number | string) {
   console.log(`${FAKESTOREAPI_DOMAIN}/${id}`);
   const response = await fetch(`${FAKESTOREAPI_DOMAIN}/${id}`);
   const data = await response.json();

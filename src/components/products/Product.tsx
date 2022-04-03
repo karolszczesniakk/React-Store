@@ -1,12 +1,10 @@
 import React from "react";
 import { Item } from "../../types/Item";
-
-
-import classes from "./Product.module.css";
 import { Link } from "react-router-dom";
 
-const Product: React.FC<{ item: Item }> = ({ item }) => {
+import classes from "./Product.module.css";
 
+const Product: React.FC<{ item: Item }> = ({ item }) => {
   return (
     <div className={classes.item}>
       <Link to={`/products/${item.id}`}>

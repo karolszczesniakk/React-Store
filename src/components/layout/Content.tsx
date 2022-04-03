@@ -3,7 +3,6 @@ import CartModal from "../cart/CartModal";
 import { RootState } from "../../store";
 
 import classes from "./Content.module.css";
-import { uiActions } from "../../store/ui-slice";
 
 const Content: React.FC = (props) => {
   const showCart = useSelector<RootState>(state => state.ui.showCart)

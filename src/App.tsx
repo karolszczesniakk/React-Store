@@ -14,8 +14,6 @@ import ShopPage from "./pages/ShopPage";
 //authSlice -> LoginModal -> google auth zeby blokowac checkout 04.04.2022 plan
 //Dropdown menu 
 
-
-
 function App() {
   return (
     <Layout>

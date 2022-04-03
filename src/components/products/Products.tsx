@@ -9,7 +9,6 @@ import LoadingSpinner from "../UI/LoadingSpinner";
 const Shop: React.FC = () => {
   const { sendRequest, status, data: productsData, error } = useHttp(getProducts);
 
-
   //fetch data from category if provided
   useEffect(() => {
     sendRequest()
@@ -32,7 +31,6 @@ const Shop: React.FC = () => {
   }
 
   //add sorting and filter functionality (filter with queryparams - URLSearchParams)
-  
   return (
     <div className={classes.products}>
       <h1>Products</h1>

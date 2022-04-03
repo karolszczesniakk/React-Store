@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
-
 import CartButton from '../cart/CartButton';
+
 import classes from './MainNavigation.module.css';
-
-
-
-
 
 const MainNavigation: React.FC = () => {
   const isActive = (navData: any) => navData.isActive ? classes.active : ''

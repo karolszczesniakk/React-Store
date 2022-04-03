@@ -1,10 +1,8 @@
 import ProductImage from './ProductImage';
 import ProductDetails from './ProductDetails';
 import { Item } from '../../../types/Item';
-import { useDispatch } from 'react-redux';
 
 import classes from "./ProductView.module.css";
-
 
 const ProductView: React.FC<{ item: Item }> = ({ item }) => {
   return (
