@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
-import { CartItem } from "../components/models/CartItem";
+import { CartItem } from "../types/CartItem";
 
 const Cart: React.FC = () => {
   const cartData = useSelector((state: RootState) => state.cart);
@@ -10,14 +10,18 @@ const Cart: React.FC = () => {
 
   if (cartItems.length > 0) {
     content = cartItems.map((cartItem: CartItem) => (
-      <div key={cartItem.itemDetails.id}>
-        {cartItem.itemDetails.title} {cartItem.itemDetails.id}{" "}
-        {cartItem.quantity} {cartItem.totalPrice}
+      <div key={cartItem.itemData.id}>
+        {cartItem.itemData.title} {cartItem.itemData.id} {cartItem.quantity}{" "}
+        {cartItem.totalPrice}
       </div>
     ));
   }
   
-  return <>{content}</>;
+  return (
+    <section>
+      {content}
+    </section>
+  );
 };
 
 export default Cart;

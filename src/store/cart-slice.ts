@@ -1,6 +1,6 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Item } from "../components/models/Item";
-import { CartItem } from "../components/models/CartItem";
+import { Item } from "../types/Item";
+import { CartItem } from "../types/CartItem";
 
 interface CartState {
   cartItems: CartItem[],
@@ -15,13 +15,13 @@ const defaultState: CartState = {
 const addToCart: CaseReducer<CartState, PayloadAction<Item>> = (state,action) => {
   const newItem = action.payload;
   const existingItem = state.cartItems.find(
-    (cartItem) => cartItem.itemDetails.id === newItem.id
+    (cartItem) => cartItem.itemData.id === newItem.id
   );
 
   if (!existingItem) {
     state.totalQuantity += 1;
     state.cartItems.push({
-      itemDetails: newItem,
+      itemData: newItem,
       totalPrice: newItem.price,
       quantity: 1,
     });

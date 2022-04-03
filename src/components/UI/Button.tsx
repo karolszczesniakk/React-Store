@@ -1,8 +1,13 @@
 import classes from './Button.module.css'
 
-const Button: React.FC = ({children}) => {
+interface ButtonProps {
+  onClick?: () => void;
+}
+
+const Button: React.FC<ButtonProps> = (props) => {
+  const {children, onClick} = props
   return (
-    <button className={classes.button}>
+    <button onClick={onClick} className={classes.button}>
       {children}
     </button>);
 }

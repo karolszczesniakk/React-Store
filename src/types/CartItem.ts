@@ -1,7 +1,7 @@
 import { Item } from "./Item";
 
 export interface CartItem {
-  itemDetails: Item;
+  itemData: Item;
   quantity: number;
   totalPrice: number;
 };

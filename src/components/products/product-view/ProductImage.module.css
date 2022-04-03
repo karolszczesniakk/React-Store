@@ -1,0 +1,10 @@
+.product-image{
+  max-width: 30rem;
+  max-height: 40rem;
+}
+
+.product-image img{
+  width: 100%;
+  height: auto;
+
+}

@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import cartSlice from "./cart-slice";
+import uiSlice from "./ui-slice";
 
 
 const store = configureStore({
   reducer: {
-    cart: cartSlice.reducer
+    cart: cartSlice.reducer,
+    ui: uiSlice.reducer
   },
 });
 

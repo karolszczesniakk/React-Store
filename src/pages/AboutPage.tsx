@@ -2,10 +2,10 @@ import LoadingSpinner from "../components/UI/LoadingSpinner";
 
 const About: React.FC = () => {
   return (
-    <div className="centered">
+    <section className="centered">
       <h1>center</h1>
       <LoadingSpinner />
-    </div>
+    </section>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Item } from "../models/Item";
+import { Item } from "../../types/Item";
 
 
 import classes from "./Product.module.css";
@@ -9,16 +9,16 @@ const Product: React.FC<{ item: Item }> = ({ item }) => {
 
   return (
     <div className={classes.item}>
-      <div className={classes["item-image"]}>
-        <Link to={`/shop/${item.id}`}>
+      <Link to={`/products/${item.id}`}>
+        <div className={classes["item-image-container"]}>
           <img src={item.image} alt="product"></img>
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div>
-        <Link to={`/shop/${item.id}`}>
+        <Link to={`/products/${item.id}`}>
           <p>{item.title}</p>
         </Link>
-        <p className={classes.price}>{item.price} PLN</p>
+        <p className={classes.price}>€{item.price}</p>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useReducer, useCallback} from "react";
+import { useReducer, useCallback } from "react";
 
 type HttpState = {
   data: any;

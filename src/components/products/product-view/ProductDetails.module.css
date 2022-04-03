@@ -1,0 +1,12 @@
+.product-details{
+  font-size: 1.5rem;
+}
+
+.product-details-buttons{
+  display:flex;
+  flex-direction: row;
+}
+
+.product-details-description{
+  margin: 1rem 0 2rem 0;
+}

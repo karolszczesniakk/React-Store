@@ -1,8 +1,12 @@
 import React from "react";
-import Products from "../components/products/Products"
+import Products from "../components/products/Products";
 
 const Shop: React.FC = () => {
-  return <Products />;
+  return (
+    <section>
+      <Products />
+    </section>
+  );
 };
 
 export default Shop;

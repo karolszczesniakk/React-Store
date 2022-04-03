@@ -1,6 +1,7 @@
 const FAKESTOREAPI_DOMAIN = "https://fakestoreapi.com/products";
 
 export async function getProducts(category = '') {
+  console.log(`${FAKESTOREAPI_DOMAIN}/`);
   const response = await fetch(`${FAKESTOREAPI_DOMAIN}/${category}`)
   const data = await response.json();
 
@@ -12,6 +13,7 @@ export async function getProducts(category = '') {
 }
 
 export async function getSingleProduct(id: number) {
+  console.log(`${FAKESTOREAPI_DOMAIN}/${id}`);
   const response = await fetch(`${FAKESTOREAPI_DOMAIN}/${id}`);
   const data = await response.json();
 

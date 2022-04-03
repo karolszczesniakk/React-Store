@@ -4,6 +4,6 @@
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 }
 
