@@ -6,9 +6,11 @@ type CardProps = {
 
 const Card: React.FC<CardProps> = (props) => {
   return (
-    <section className={`${classes.card} ${props.className ? props.className : ""}`}>
+    <div
+      className={`${classes.card} ${props.className ? props.className : ""}`}
+    >
       {props.children}
-    </section>
+    </div>
   );
 };
 

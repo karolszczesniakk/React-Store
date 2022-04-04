@@ -1,0 +1,11 @@
+.cart-product-image-container{
+  width: 4.5rem;
+  height: auto;
+  margin: 0.5rem;
+  justify-self: center;
+}
+
+.cart-product-image{
+  height: 100%;
+  width: 4.5rem;
+}
