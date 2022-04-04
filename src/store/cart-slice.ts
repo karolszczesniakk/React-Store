@@ -24,14 +24,14 @@ const addToCart: CaseReducer<CartState, PayloadAction<Item>> = (state,action) =>
 
   if (!existingItem) {
     state.totalQuantity += 1;
-    state.totalAmount = +newItem.price.toFixed(2);
+    state.totalAmount += +newItem.price.toFixed(2);
     state.cartItems.push({
       itemData: newItem,
       totalPrice: +newItem.price.toFixed(2),
       quantity: 1,
     });
   } else {
-    state.totalAmount += +(state.totalAmount + existingItem.totalPrice).toFixed(2);
+    state.totalAmount = +(state.totalAmount + existingItem.itemData.price).toFixed(2);
     state.totalQuantity += 1;
     existingItem.quantity += 1;
     existingItem.totalPrice =  +(newItem.price + existingItem.totalPrice).toFixed(2);
@@ -49,13 +49,13 @@ const removeFromCart: CaseReducer<CartState, PayloadAction<{id: number}>> = (
   if (!existingItem) return;
 
   if (existingItem.quantity === 1) {
-    state.totalQuantity = 0;
-    state.totalAmount = 0;
+    state.totalQuantity -= 1;
+    state.totalAmount -= +existingItem.itemData.price.toFixed(2);
     const newCartItems = state.cartItems.filter(item => item.itemData.id !== idToRemove);
     state.cartItems = newCartItems
   } else {
     state.totalQuantity -= 1;
-    state.totalAmount -= +(state.totalAmount - existingItem.itemData.price).toFixed(2);
+    state.totalAmount = +(state.totalAmount - existingItem.itemData.price).toFixed(2);
     existingItem.quantity -= 1;
     existingItem.totalPrice = +(
       existingItem.totalPrice - existingItem.itemData.price
