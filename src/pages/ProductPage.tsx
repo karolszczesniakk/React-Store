@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ProductView from "../components/products/product-view/ProductView";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 import useHttp from "../hooks/use-http";
-import { getSingleProduct } from "../lib/api";
+import { getSingleProduct } from "../api/api";
 
 const ProductPage: React.FC = () => {
   const params = useParams();

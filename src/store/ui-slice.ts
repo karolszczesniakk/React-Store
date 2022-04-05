@@ -9,7 +9,6 @@ const defaultState: UiState = {
 }
 
 const toggleCart: CaseReducer<UiState> = (state) => {
-  console.log("siema");
   state.showCart = !state.showCart;
 }
 

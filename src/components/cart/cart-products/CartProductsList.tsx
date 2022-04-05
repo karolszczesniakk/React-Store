@@ -12,6 +12,7 @@ const CartProductsList: React.FC = () => {
       <div>
         {cartItems.map((item: CartItem) => (
           <CartProduct
+            key={item.itemData.id}
             quantity={item.quantity}
             itemData={item.itemData}
             totalPrice={item.totalPrice}
