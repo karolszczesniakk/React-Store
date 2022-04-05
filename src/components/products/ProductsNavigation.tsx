@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import classes from "./ProductsNavigation.module.css";
 
 const ProductsNavigation: React.FC = () => {
-  const isActive = (navData: any) => (navData.isActive ? classes.active : "");
-
   return (
     <nav className={classes.nav}>
       <ul>
