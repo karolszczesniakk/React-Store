@@ -1,4 +1,4 @@
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../firebase";
 import { useAppDispatch } from "../../store";
 import { authActions } from "../../store/auth-slice";
@@ -10,14 +10,6 @@ const GoogleSignInButton: React.FC = () => {
      const handleLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        let token;
-        if (credential) {
-          token = credential.accessToken;
-        } else {
-          throw new Error("Error with authentication")
-        }
-
         const user = result.user;
         const { uid: id, displayName: name, email } = user;
 
