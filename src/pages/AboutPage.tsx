@@ -1,6 +1,6 @@
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 
-const About: React.FC = () => {
+const AboutPage: React.FC = () => {
   return (
     <section className="centered">
       <h1>center</h1>
@@ -9,4 +9,4 @@ const About: React.FC = () => {
   );
 }
 
-export default About;
+export default AboutPage;

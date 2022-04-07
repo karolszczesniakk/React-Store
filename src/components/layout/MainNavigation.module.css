@@ -41,3 +41,8 @@
   color: #11acac;
   border-bottom: 1px solid #11acac;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}

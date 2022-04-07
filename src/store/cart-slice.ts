@@ -2,7 +2,7 @@ import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Item } from "../types/Item";
 import { CartItem } from "../types/CartItem";
 
-interface CartState {
+export interface CartState {
   cartItems: CartItem[];
   totalQuantity: number;
   totalAmount: number;
@@ -15,6 +15,11 @@ const defaultState: CartState = {
 };
 
 
+const setCart: CaseReducer<CartState, PayloadAction<CartState>> = (state, action) => {
+  state.cartItems = action.payload.cartItems;
+  state.totalAmount = action.payload.totalAmount;
+  state.totalQuantity = action.payload.totalQuantity; 
+}
 
 const addToCart: CaseReducer<CartState, PayloadAction<Item>> = (state,action) => {
   const newItem = action.payload;
@@ -36,6 +41,7 @@ const addToCart: CaseReducer<CartState, PayloadAction<Item>> = (state,action) =>
     existingItem.quantity += 1;
     existingItem.totalPrice =  +(newItem.price + existingItem.totalPrice).toFixed(2);
   }
+  localStorage.setItem('cart', JSON.stringify(state));;
 };
 
 const removeFromCart: CaseReducer<CartState, PayloadAction<{id: number}>> = (
@@ -61,6 +67,14 @@ const removeFromCart: CaseReducer<CartState, PayloadAction<{id: number}>> = (
       existingItem.totalPrice - existingItem.itemData.price
     ).toFixed(2);
   }
+  //if no items in state - remove cart from storage
+  if (state.totalQuantity === 0) {
+    console.log("removing all");
+    localStorage.removeItem("cart");
+  } else {
+    localStorage.setItem("cart", JSON.stringify(state));
+  }
+  
 };
 
 const cartSlice = createSlice({
@@ -69,6 +83,7 @@ const cartSlice = createSlice({
   reducers: {
     addToCart,
     removeFromCart,
+    setCart,
   },
 });
 

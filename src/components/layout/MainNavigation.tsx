@@ -1,12 +1,24 @@
-import React from 'react';
-import { Link, NavLink } from "react-router-dom";
-import CartButton from '../cart/CartButton';
+import React from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import CartButton from "../cart/CartButton";
+import Button from "../UI/Button";
+import { useAppDispatch } from "../../store";
+import { authActions } from "../../store/auth-slice";
+import { RootState } from "../../store";
+import GoogleSignInButton from "../GoogleSignInButton/GoogleSignInButton";
 
-import classes from './MainNavigation.module.css';
+
+
+import classes from "./MainNavigation.module.css";
+import { useSelector } from "react-redux";
+
 
 const MainNavigation: React.FC = () => {
-  const isActive = (navData: any) => navData.isActive ? classes.active : ''
-
+  const isActive = (navData: any) => (navData.isActive ? classes.active : "");
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn)
+  
   return (
     <header className={classes.header}>
       <Link to="/shop">
@@ -36,9 +48,21 @@ const MainNavigation: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <CartButton />
+      <div className={classes.buttons}>
+        {isLoggedIn ? (
+          <>
+            <Button onClick={() => dispatch(authActions.logout())}>
+              Logout
+            </Button>
+            <Button onClick={() => navigate('/profile') }>Profile</Button>
+          </>
+        ) : (
+          <GoogleSignInButton />
+        )}
+        <CartButton />
+      </div>
     </header>
   );
-}
+};
 
-export default MainNavigation
+export default MainNavigation;

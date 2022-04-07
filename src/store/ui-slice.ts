@@ -1,16 +1,16 @@
 import { CaseReducer, createSlice} from "@reduxjs/toolkit";
 
-interface UiState {
+interface Ui {
   showCart: boolean;
 }
 
-const defaultState: UiState = {
-  showCart: false
-}
+const defaultState: Ui = {
+  showCart: false,
+};
 
-const toggleCart: CaseReducer<UiState> = (state) => {
+const toggleCart: CaseReducer<Ui> = (state) => {
   state.showCart = !state.showCart;
-}
+};
 
 const uiSlice = createSlice({
   name: "ui",

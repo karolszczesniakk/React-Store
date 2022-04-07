@@ -12,6 +12,7 @@ import classes from "./Products.module.css";
 
 
 const Shop: React.FC = () => {
+
   const {
     sendRequest,
     status,
