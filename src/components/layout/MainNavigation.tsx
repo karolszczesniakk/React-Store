@@ -37,11 +37,6 @@ const MainNavigation: React.FC = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className={isActive} to="/about">
-              About
-            </NavLink>
-          </li>
-          <li>
             <NavLink className={isActive} to="/contact">
               Contact
             </NavLink>

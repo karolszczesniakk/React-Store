@@ -7,9 +7,9 @@ import classes from "./Content.module.css";
 const Content: React.FC = (props) => {
   const showCart = useSelector<RootState>(state => state.ui.showCart)
   return (
-    <> 
+    <>
       {showCart && <CartModal />}
-      <div className={classes.content}>{props.children}</div>
+      <section className={classes.content}>{props.children}</section>
     </>
   );
 };

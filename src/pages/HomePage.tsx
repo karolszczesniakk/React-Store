@@ -3,10 +3,10 @@ import NewProductScreen from "../components/products/main-product-banner/MainPro
 
 const Home: React.FC = () => {
   return (
-    <section>
+    <>
       <NewProductScreen />
       <Products />
-    </section>
+    </>
   );
 }
 

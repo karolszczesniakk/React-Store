@@ -1,6 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
-import AboutPage from "./pages/AboutPage";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
@@ -13,6 +12,7 @@ import { authActions } from "./store/auth-slice";
 import { useEffect } from "react";
 import ProfilePage from "./pages/ProfilePage";
 import { cartActions, CartState } from "./store/cart-slice";
+import Contact from "./pages/ContactPage";
 /*
 TASKS:
 -create checkout contact and about page
@@ -25,10 +25,11 @@ TASKS:
 function App() {
   const dispatch = useAppDispatch();
 
-  //useEffect for localStorage user data
+  //useEffect to get localStorage user data
   useEffect(() => {
     const storedUserDataJSON = localStorage.getItem("user");
     let storedUserData: UserData;
+
     if (storedUserDataJSON) {
       storedUserData = JSON.parse(storedUserDataJSON);
       console.log(storedUserData);
@@ -36,11 +37,11 @@ function App() {
     }
   }, [dispatch]);
 
-  //use effect for localStorage cart data
+  //useEffect to get localStorage cart data
   useEffect(() => {
     const storedCartDataJSON = localStorage.getItem("cart");
-    
     let storedCartData: CartState;
+
     if (storedCartDataJSON) {
       storedCartData = JSON.parse(storedCartDataJSON);
       console.log(storedCartData);
@@ -58,10 +59,9 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/products" element={<ShopPage />} />
         <Route path="/products/:itemId" element={<ProductPage />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route
           path="/contact"
-          element={<h1 className="centered">Contact</h1>}
+          element={<h1 className="centered"><Contact /></h1>}
         />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/*" element={<Navigate replace to="/not-found" />} />

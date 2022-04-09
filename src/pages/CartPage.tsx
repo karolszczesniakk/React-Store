@@ -17,11 +17,9 @@ const Cart: React.FC = () => {
     ));
   }
   
-  return (
-    <section>
-      {content}
-    </section>
-  );
+  return <>{content}</>
+
+
 };
 
 export default Cart;

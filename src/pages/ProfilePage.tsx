@@ -37,10 +37,10 @@ const ProfilePage: React.FC = () => {
   }, [isLoggedIn, navigate]);
 
   return (
-    <section className="centered">
+    <div className="centered">
       <h1>Users data</h1>
       {content}
-    </section>
+    </div>
   );
 };
 

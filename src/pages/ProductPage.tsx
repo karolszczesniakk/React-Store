@@ -47,6 +47,6 @@ const ProductPage: React.FC = () => {
     navigate("/not-found", { replace: true });
   }
 
-  return <section>{content}</section>;
+  return <>{content}</>;
 };
 export default ProductPage;
