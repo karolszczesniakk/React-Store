@@ -21,7 +21,7 @@ const MainNavigation: React.FC = () => {
   
   return (
     <header className={classes.header}>
-      <Link to="/shop">
+      <Link to="/home">
         <div className={classes.logo}>ReactStore</div>
       </Link>
       <nav className={classes.nav}>
