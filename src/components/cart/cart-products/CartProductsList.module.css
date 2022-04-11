@@ -1,0 +1,8 @@
+.cart-products-list{
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.amount {
+  margin-top: 20px;
+}

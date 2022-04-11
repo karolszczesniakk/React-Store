@@ -10,8 +10,7 @@
 
 .modal {
   min-width: 500px;
-  max-height: 700px;
-  overflow-y: auto;
+
   position:fixed;
   top: 10vh;
   left: 15%;
