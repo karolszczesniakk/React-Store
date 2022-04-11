@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ProductView from "../components/products/product-view/ProductView";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 import useHttp from "../hooks/use-http";
-import { getSingleProduct } from "../api/api";
+import { GetSingleProduct, getSingleProduct } from "../api/api";
 
 const ProductPage: React.FC = () => {
   const params = useParams();
@@ -14,14 +14,16 @@ const ProductPage: React.FC = () => {
     status,
     data: itemData,
     error,
-  } = useHttp(getSingleProduct);
+  } = useHttp<GetSingleProduct>(getSingleProduct);
 
   const { itemId } = params;
 
   //check if item of id itemId exists in database
 
   useEffect(() => {
-    sendRequest(itemId);
+    if (itemId) {
+          sendRequest(itemId);
+    }
   }, [sendRequest, itemId]);
 
   useEffect(() => {

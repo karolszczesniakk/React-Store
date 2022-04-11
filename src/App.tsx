@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ShopPage from "./pages/ShopPage";
-import UserData from "./types/UserData";
+import { UserData } from "./types/UserData";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "./store";
 import { authActions } from "./store/auth-slice";
@@ -61,7 +61,11 @@ function App() {
         <Route path="/products/:itemId" element={<ProductPage />} />
         <Route
           path="/contact"
-          element={<h1 className="centered"><Contact /></h1>}
+          element={
+            <h1 className="centered">
+              <Contact />
+            </h1>
+          }
         />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/*" element={<Navigate replace to="/not-found" />} />

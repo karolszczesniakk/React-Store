@@ -1,10 +1,5 @@
 import { CaseReducer, createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface UserData {
-  id: string;
-  name: string | null;
-  email: string | null;
-}
+import {UserData} from "../types/UserData"
 
 interface Auth {
   isLoggedIn: boolean;
@@ -23,7 +18,10 @@ const login: CaseReducer<Auth, PayloadAction<UserData>> = (state, action) => {
     id: action.payload.id,
     name: action.payload.name,
     email: action.payload.email,
+    token: action.payload.token
+   // token: action.payload.token
   };
+  console.log(state.user);
 
   localStorage.setItem('user', JSON.stringify(state.user));
 };

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ProductsContainer from "../products/ProductsContainer";
 import { Item } from "../../types/Item";
 import useHttp from "../../hooks/use-http";
-import { getProducts } from "../../api/api";
+import { GetProducts, getProducts } from "../../api/api";
 import LoadingSpinner from "../UI/LoadingSpinner";
 import { useLocation, useNavigate } from "react-router-dom";
 import ProductsNavigation from "./ProductsNavigation";
@@ -18,7 +18,7 @@ const Shop: React.FC = () => {
     status,
     data: productsData,
     error,
-  } = useHttp(getProducts);
+  } = useHttp<GetProducts>(getProducts);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -49,7 +49,6 @@ const Shop: React.FC = () => {
   if (status === "pending") {
     content = <LoadingSpinner />;
   }
-
 
   if (status === "completed" && displayedProducts.length > 0) {
     content = <ProductsContainer items={displayedProducts} />;

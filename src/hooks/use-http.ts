@@ -8,7 +8,7 @@ type HttpState = {
 
 type HttpAction = { type: "SEND" } | { type: "SUCCESS", responseData: any } | { type: "ERROR", errorMessage: string };
 
-function httpReducer(state: HttpState, action: HttpAction): HttpState {
+const httpReducer = (state: HttpState, action: HttpAction): HttpState => {
   if (action.type === "SEND") {
     return {
       data: null,
@@ -36,7 +36,7 @@ function httpReducer(state: HttpState, action: HttpAction): HttpState {
   return state;
 }
 
-function useHttp(requestFunction: any, startWithPending = false) {
+const useHttp =<T>(requestFunction: any, startWithPending = false) => {
   const [httpState, dispatch] = useReducer(httpReducer, {
     status: startWithPending ? "pending" : null,
     data: null,
@@ -44,14 +44,14 @@ function useHttp(requestFunction: any, startWithPending = false) {
   });
 
   const sendRequest = useCallback(
-    async function (requestData?) {
+    async (requestData?: any) => {
       dispatch({ type: "SEND" });
       try {
         const responseData = await requestFunction(requestData);
         dispatch({
           type: "SUCCESS",
-          responseData
-          });
+          responseData,
+        });
       } catch (error: any) {
         dispatch({
           type: "ERROR",
@@ -60,7 +60,11 @@ function useHttp(requestFunction: any, startWithPending = false) {
       }
     },
     [requestFunction]
-  );
+  ) as unknown as T;
+
+
+
+  
 
   return {
     sendRequest,

@@ -8,12 +8,19 @@ export interface CartState {
   totalAmount: number;
 };
 
-const defaultState: CartState = {
+export const defaultState: CartState = {
   cartItems: [],
   totalQuantity: 0,
   totalAmount: 0
 };
 
+const emptyCart: CaseReducer<CartState> = state => {
+  localStorage.removeItem("cart");
+  state.cartItems = [];
+  state.totalQuantity = 0;
+  state.totalAmount = 0;
+  console.log(state);
+}
 
 const setCart: CaseReducer<CartState, PayloadAction<CartState>> = (state, action) => {
   state.cartItems = action.payload.cartItems;
@@ -84,6 +91,7 @@ const cartSlice = createSlice({
     addToCart,
     removeFromCart,
     setCart,
+    emptyCart
   },
 });
 

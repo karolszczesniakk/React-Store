@@ -1,12 +1,8 @@
-import About from "../components/contact/Contact";
+import Contact from "../components/contact/Contact";
 
 
 const ContactPage: React.FC = () => {
-  return (
-    <section >
-      <About />
-    </section>
-  );
+  return <><Contact /></>
 }
 
 export default ContactPage;
