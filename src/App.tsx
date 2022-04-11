@@ -15,10 +15,8 @@ import { cartActions, CartState } from "./store/cart-slice";
 import Contact from "./pages/ContactPage";
 /*
 TASKS:
--create checkout contact and about page
--implement authentication
+
 -implement navigation dropdown for smaller screens
--local storage to keep cart data
 -clean up folder structure
 */
 
