@@ -11,6 +11,7 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #222831;
   min-height: 100vh;
+  max-width: 100vw;
   color: #fff;
 
 

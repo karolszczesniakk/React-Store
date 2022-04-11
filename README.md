@@ -6,9 +6,11 @@ Example e-commerce app. User can filter products by categories and then open a p
 
 App fetches products data from https://fakestoreapi.com/
 
-Checkout page and navigation bar responsive design not finished yet.
+Checkout button in cart currently saves order data in database.
 
-Checkout button currently saves order data in database.
+Topics that are not finished yet:
+- Responsivness / styling for mobile size screens
+- Checkout page
 
 Tech stack:
 - TypeScript
