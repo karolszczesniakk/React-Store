@@ -42,7 +42,7 @@ const Cart: React.FC = () => {
         <Button onClick={() => dispatch(uiActions.toggleCart())}>
           Close Cart
         </Button>
-        <Button onClick={sendOrder}>Checkout</Button>
+        {totalQuantity !== 0 && <Button onClick={sendOrder}>Checkout</Button>}
       </div>
     </div>
   );
