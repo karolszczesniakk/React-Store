@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./ProductsNavigation.module.css";
 
+
 const ProductsNavigation: React.FC = () => {
   return (
     <nav className={classes.nav}>

@@ -9,7 +9,7 @@
 }
 
 .modal {
-  min-width: 500px;
+  min-width: 350px;
   position:fixed;
   top: 10vh;
   left: 15%;

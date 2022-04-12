@@ -1,10 +1,10 @@
 import Products from "../components/products/Products"
-import NewProductScreen from "../components/products/main-product-banner/MainProductScreen"
+import MainBanner from "../components/products/main-banner/MainBanner";
 
 const Home: React.FC = () => {
   return (
     <>
-      <NewProductScreen />
+      <MainBanner />
       <Products />
     </>
   );

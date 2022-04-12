@@ -5,6 +5,7 @@ import { authActions } from "../../store/auth-slice";
 import {UserData} from "../../types/UserData";
 import Button from "../UI/Button";
 
+
 const GoogleSignInButton: React.FC = () => {
   const dispatch = useAppDispatch();
   const handleLogin = async () => {
@@ -53,7 +54,7 @@ const GoogleSignInButton: React.FC = () => {
       });
   };
   */
-  return <Button onClick={handleLogin}>Sign in with Google</Button>;
+  return <Button onClick={handleLogin}>Google Sign-In</Button>;
 };
 
 export default GoogleSignInButton;

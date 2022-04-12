@@ -1,4 +1,4 @@
-import classes from "./MainProductScreen.module.css"
+import classes from "./MainBanner.module.css";
 
 const MainProductScreen: React.FC = () => {
   const pictureLink =

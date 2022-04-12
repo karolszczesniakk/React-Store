@@ -8,6 +8,7 @@ import { SendOrderData, sendOrderData } from "../../api/api";
 
 import classes from "./Cart.module.css";
 import { cartActions } from "../../store/cart-slice";
+import GoogleSignInButton from "../GoogleSignInButton/GoogleSignInButton";
 
 const Cart: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -15,23 +16,26 @@ const Cart: React.FC = () => {
 
   const cartData = useSelector((state: RootState) => state.cart);
   const userData = useSelector((state: RootState) => state.auth.user);
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   const totalQuantity = useSelector(
     (state: RootState) => state.cart.totalQuantity
   );
-  const content =
+  let content =
     totalQuantity > 0 ? <CartProductsList /> : <p>Cart is currently empty!</p>;
 
-  //just a temporary function before I create checkout page
   const sendOrder = () => {
     if (cartData && userData) {
       sendRequest({ cartData, userData });
       dispatch(cartActions.emptyCart());
+      dispatch(uiActions.toggleCart())
+      alert("Order has been sent!");
     }
   };
 
   if (error) {
     console.log(error);
+    content = <p>{error}</p>
   }
 
   return (
@@ -42,7 +46,8 @@ const Cart: React.FC = () => {
         <Button onClick={() => dispatch(uiActions.toggleCart())}>
           Close Cart
         </Button>
-        {totalQuantity !== 0 && <Button onClick={sendOrder}>Checkout</Button>}
+        {totalQuantity !== 0 && isLoggedIn && <Button onClick={sendOrder}>Send Order</Button>}
+        {!isLoggedIn && <GoogleSignInButton />}
       </div>
     </div>
   );

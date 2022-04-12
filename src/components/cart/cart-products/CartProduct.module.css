@@ -2,7 +2,7 @@
   font-size: 1.1rem;
   margin: 1rem auto;
   max-width: 50%;
-  min-width: 400px;
+  min-width: 300px;
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   align-items: center;
@@ -12,7 +12,7 @@
 
 .cart-product-buttons {
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   text-align: center;
 }
 
