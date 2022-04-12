@@ -6,8 +6,8 @@ import Card from "../UI/Card";
 import classes from "./Orders.module.css";
 
 const Orders: React.FC<{ orders: PastOrderData[] }> = ({ orders }) => {
-  console.log(orders);
   const reversedOrders = orders.reverse();
+  
   return (
     <div className={classes.orders}>
       <h1 className="centered">Orders:</h1>

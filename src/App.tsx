@@ -6,19 +6,12 @@ import ProductPage from "./pages/ProductPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ShopPage from "./pages/ShopPage";
 import { UserData } from "./types/UserData";
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "./store";
+import {  useAppDispatch } from "./store";
 import { authActions } from "./store/auth-slice";
 import { useEffect } from "react";
 import ProfilePage from "./pages/ProfilePage";
 import { cartActions, CartState } from "./store/cart-slice";
 import Contact from "./pages/ContactPage";
-/*
-TASKS:
-
--implement navigation dropdown for smaller screens
--clean up folder structure
-*/
 
 function App() {
   const dispatch = useAppDispatch();
@@ -30,7 +23,6 @@ function App() {
 
     if (storedUserDataJSON) {
       storedUserData = JSON.parse(storedUserDataJSON);
-      console.log(storedUserData);
       dispatch(authActions.login(storedUserData));
     }
   }, [dispatch]);
@@ -42,13 +34,9 @@ function App() {
 
     if (storedCartDataJSON) {
       storedCartData = JSON.parse(storedCartDataJSON);
-      console.log(storedCartData);
       dispatch(cartActions.setCart(storedCartData));
     }
   }, [dispatch]);
-
-  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
-  console.log(isLoggedIn);
 
   return (
     <Layout>

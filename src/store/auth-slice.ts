@@ -12,16 +12,13 @@ const defaultState: Auth = {
 };
 
 const login: CaseReducer<Auth, PayloadAction<UserData>> = (state, action) => {
-  console.log("loggin in");
   state.isLoggedIn = true;
   state.user = {
     id: action.payload.id,
     name: action.payload.name,
     email: action.payload.email,
     token: action.payload.token
-   // token: action.payload.token
   };
-  console.log(state.user);
 
   localStorage.setItem('user', JSON.stringify(state.user));
 };

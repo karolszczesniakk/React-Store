@@ -6,7 +6,7 @@ import MainNavigationDropdown from "./MainNavigationDropdown";
 
 const Layout: React.FC = (props) => {
   const screenWidth = useWindowWidth();
-  console.log(screenWidth);
+  
   return (
     <>
       {screenWidth > 980 ? <MainNavigation /> : <MainNavigationDropdown />}

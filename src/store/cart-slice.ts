@@ -19,7 +19,6 @@ const emptyCart: CaseReducer<CartState> = state => {
   state.cartItems = [];
   state.totalQuantity = 0;
   state.totalAmount = 0;
-  console.log(state);
 }
 
 const setCart: CaseReducer<CartState, PayloadAction<CartState>> = (state, action) => {
@@ -76,7 +75,6 @@ const removeFromCart: CaseReducer<CartState, PayloadAction<{id: number}>> = (
   }
   //if no items in state - remove cart from storage
   if (state.totalQuantity === 0) {
-    console.log("removing all");
     localStorage.removeItem("cart");
   } else {
     localStorage.setItem("cart", JSON.stringify(state));
