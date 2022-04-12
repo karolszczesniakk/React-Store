@@ -10,12 +10,12 @@ import { RootState } from "../store";
 
 const ProfilePage: React.FC = () => {
   const navigate = useNavigate();
+
   const authState = useSelector((state: RootState) => state.auth);
-
-  const { sendRequest, status, data: ordersData } = useHttp<GetOrdersData>(getOrdersData);
-
   const { isLoggedIn, user: userData } = authState;
 
+  const { sendRequest, status, data: ordersData } = useHttp<GetOrdersData>(getOrdersData);
+  
   let content;
 
   if (status === "pending") {
@@ -23,7 +23,6 @@ const ProfilePage: React.FC = () => {
   }
 
   if (userData && ordersData && status === "completed") {
-    console.log(ordersData);
     content = (
       <>
         <h1>{userData.name}</h1>
