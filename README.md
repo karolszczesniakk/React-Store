@@ -2,7 +2,7 @@ Link to the demo -> https://kszczesniak-react-store.netlify.app/.
 
 To start -> run 'npm install' -> run 'npm start' -> check 'localhost:3000'
 
-Example e-commerce app. User can filter products by categories and then open a page with chosen product details and add it to cart. In order to send the order user has to authenticate with google sign in. Orders data are saved in Firebase Realtime data base. User can view previous orders in Profile page which is accessible after user signs in.
+Example e-commerce app. User can filter products by categories and then open a page with chosen product details and add it to cart. In order to send the order user has to authenticate with google sign in. Orders data is saved in Firebase Realtime data base. User can view previous orders in Profile page which is accessible after user signs in.
 
 App fetches products data from https://fakestoreapi.com/. Sometimes it might take a moment to load all the data.
 
