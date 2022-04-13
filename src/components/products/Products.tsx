@@ -50,16 +50,24 @@ const Shop: React.FC = () => {
     content = <LoadingSpinner />;
   }
 
-  if (status === "completed" && displayedProducts.length > 0) {
+  if (status === "completed" && !error && displayedProducts && displayedProducts.length > 0) {
     content = <ProductsContainer items={displayedProducts} />;
   }
-  if (status === "completed" && displayedProducts.length === 0) {
+  if (status === "completed" && !error && displayedProducts && displayedProducts.length === 0) {
     content = <h1>Couldnt find a category of name "{displayedCategory}"</h1>;
     setTimeout(() => navigate("/products", { replace: true }),4000);
   }
 
   if (error) {
-    content = <div>Products fetch error!</div>;
+    content = (
+      <>
+        <h1>Products fetch error!</h1>
+        <span>
+          fakestore API probably doesn't work at the moment, try again within
+          few minutes :)
+        </span>
+      </>
+    );
   }
 
   return (

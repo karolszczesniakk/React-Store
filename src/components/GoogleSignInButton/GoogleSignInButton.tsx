@@ -5,8 +5,14 @@ import { authActions } from "../../store/auth-slice";
 import {UserData} from "../../types/UserData";
 import Button from "../UI/Button";
 
+interface GoogleSignInButtonProps {
+  text?: string;
+}
 
-const GoogleSignInButton: React.FC = () => {
+
+const GoogleSignInButton: React.FC<GoogleSignInButtonProps> = ({
+  text = "Google Sign-In",
+}) => {
   const dispatch = useAppDispatch();
   const handleLogin = async () => {
     try {
@@ -20,7 +26,7 @@ const GoogleSignInButton: React.FC = () => {
         id,
         name,
         email,
-        token
+        token,
       };
       dispatch(authActions.login(loggedInUser));
     } catch (error: any) {
@@ -31,7 +37,7 @@ const GoogleSignInButton: React.FC = () => {
     }
   };
 
-  return <Button onClick={handleLogin}>Google Sign-In</Button>;
+  return <Button onClick={handleLogin}>{text}</Button>;
 };
 
 export default GoogleSignInButton;

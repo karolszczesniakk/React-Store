@@ -47,7 +47,7 @@ const Cart: React.FC = () => {
           Close Cart
         </Button>
         {totalQuantity !== 0 && isLoggedIn && <Button onClick={sendOrder}>Send Order</Button>}
-        {!isLoggedIn && <GoogleSignInButton />}
+        {!isLoggedIn && totalQuantity !== 0 && <GoogleSignInButton text="Send Order"/>}
       </div>
     </div>
   );
